@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="rugbyModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="club">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Established" Type="Int32" />
+    <Property Name="Logo" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Country" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Trophies" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="ClubHomepage" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Video" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="CurrentCoach" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Stadium" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Capacity" Type="Int32" />
+    <Property Name="Map" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="NotablePlayers" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Rivalries" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Cheer" Type="Int32" />
+  </EntityType>
+  <EntityContainer Name="rugbyEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="clubs" EntityType="Self.club" />
+  </EntityContainer>
+</Schema>

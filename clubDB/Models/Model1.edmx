@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="rugbyModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="club">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar(max)" Nullable="false" />
+          <Property Name="Established" Type="int" />
+          <Property Name="Logo" Type="varchar(max)" Nullable="false" />
+          <Property Name="Country" Type="varchar(max)" Nullable="false" />
+          <Property Name="Trophies" Type="varchar(max)" />
+          <Property Name="ClubHomepage" Type="varchar(max)" />
+          <Property Name="Video" Type="varchar(max)" />
+          <Property Name="CurrentCoach" Type="varchar(max)" />
+          <Property Name="Stadium" Type="varchar(max)" />
+          <Property Name="Capacity" Type="int" />
+          <Property Name="Map" Type="varchar(max)" />
+          <Property Name="NotablePlayers" Type="varchar(max)" />
+          <Property Name="Rivalries" Type="varchar(max)" />
+          <Property Name="Cheer" Type="int" />
+        </EntityType>
+        <EntityContainer Name="rugbyModelStoreContainer">
+          <EntitySet Name="club" EntityType="Self.club" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="rugbyModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="club">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Established" Type="Int32" />
+          <Property Name="Logo" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Country" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Trophies" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="ClubHomepage" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Video" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="CurrentCoach" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Stadium" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Capacity" Type="Int32" />
+          <Property Name="Map" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="NotablePlayers" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Rivalries" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Cheer" Type="Int32" />
+        </EntityType>
+        <EntityContainer Name="rugbyEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="clubs" EntityType="Self.club" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="rugbyModelStoreContainer" CdmEntityContainer="rugbyEntities">
+          <EntitySetMapping Name="clubs">
+            <EntityTypeMapping TypeName="rugbyModel.club">
+              <MappingFragment StoreEntitySet="club">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Established" ColumnName="Established" />
+                <ScalarProperty Name="Logo" ColumnName="Logo" />
+                <ScalarProperty Name="Country" ColumnName="Country" />
+                <ScalarProperty Name="Trophies" ColumnName="Trophies" />
+                <ScalarProperty Name="ClubHomepage" ColumnName="ClubHomepage" />
+                <ScalarProperty Name="Video" ColumnName="Video" />
+                <ScalarProperty Name="CurrentCoach" ColumnName="CurrentCoach" />
+                <ScalarProperty Name="Stadium" ColumnName="Stadium" />
+                <ScalarProperty Name="Capacity" ColumnName="Capacity" />
+                <ScalarProperty Name="Map" ColumnName="Map" />
+                <ScalarProperty Name="NotablePlayers" ColumnName="NotablePlayers" />
+                <ScalarProperty Name="Rivalries" ColumnName="Rivalries" />
+                <ScalarProperty Name="Cheer" ColumnName="Cheer" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

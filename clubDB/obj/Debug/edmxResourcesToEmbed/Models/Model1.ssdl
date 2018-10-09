@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="rugbyModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="club">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar(max)" Nullable="false" />
+    <Property Name="Established" Type="int" />
+    <Property Name="Logo" Type="varchar(max)" Nullable="false" />
+    <Property Name="Country" Type="varchar(max)" Nullable="false" />
+    <Property Name="Trophies" Type="varchar(max)" />
+    <Property Name="ClubHomepage" Type="varchar(max)" />
+    <Property Name="Video" Type="varchar(max)" />
+    <Property Name="CurrentCoach" Type="varchar(max)" />
+    <Property Name="Stadium" Type="varchar(max)" />
+    <Property Name="Capacity" Type="int" />
+    <Property Name="Map" Type="varchar(max)" />
+    <Property Name="NotablePlayers" Type="varchar(max)" />
+    <Property Name="Rivalries" Type="varchar(max)" />
+    <Property Name="Cheer" Type="int" />
+  </EntityType>
+  <EntityContainer Name="rugbyModelStoreContainer">
+    <EntitySet Name="club" EntityType="Self.club" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

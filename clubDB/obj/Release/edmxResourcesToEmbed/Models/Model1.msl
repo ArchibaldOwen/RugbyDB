@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="rugbyModelStoreContainer" CdmEntityContainer="rugbyEntities">
+    <EntitySetMapping Name="clubs">
+      <EntityTypeMapping TypeName="rugbyModel.club">
+        <MappingFragment StoreEntitySet="club">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Established" ColumnName="Established" />
+          <ScalarProperty Name="Logo" ColumnName="Logo" />
+          <ScalarProperty Name="Country" ColumnName="Country" />
+          <ScalarProperty Name="Trophies" ColumnName="Trophies" />
+          <ScalarProperty Name="ClubHomepage" ColumnName="ClubHomepage" />
+          <ScalarProperty Name="Video" ColumnName="Video" />
+          <ScalarProperty Name="CurrentCoach" ColumnName="CurrentCoach" />
+          <ScalarProperty Name="Stadium" ColumnName="Stadium" />
+          <ScalarProperty Name="Capacity" ColumnName="Capacity" />
+          <ScalarProperty Name="Map" ColumnName="Map" />
+          <ScalarProperty Name="NotablePlayers" ColumnName="NotablePlayers" />
+          <ScalarProperty Name="Rivalries" ColumnName="Rivalries" />
+          <ScalarProperty Name="Cheer" ColumnName="Cheer" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

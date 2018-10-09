@@ -1,0 +1,56 @@
+﻿@model clubDB.Models.club
+
+@Styles.Render("~/Content/forms.css")
+
+
+@{
+    ViewBag.Title = "Details";
+}
+<div class="heading">   Club Details </div>
+
+
+<hr />
+<section class="frontPage">
+    <br />
+
+    <dl class="dl-horizontal col-lg-4">
+        <dt>@Html.DisplayNameFor(m => m.Name):</dt>
+        <dd>@Html.DisplayFor(m => m.Name)</dd>
+        <dt>@Html.DisplayNameFor(m => m.Established):</dt>
+        <dd>@Html.DisplayFor(m => m.Established)</dd>
+        <dt>@Html.DisplayNameFor(m => m.Country):</dt>
+        <dd>@Html.DisplayFor(m => m.Country)</dd>
+        <dt>@Html.DisplayNameFor(m => m.CurrentCoach):</dt>
+        <dd>@Html.DisplayFor(m => m.CurrentCoach)</dd>
+        <dt>@Html.DisplayNameFor(m => m.Trophies):</dt>
+        <dd>@Html.DisplayFor(m => m.Trophies)</dd>
+        <dt>Fans:</dt>
+        <dd>&#128483;@Html.DisplayFor(m => m.Cheer)</dd>
+        <dt>@Html.DisplayNameFor(m => m.Stadium):</dt>
+        <dd>@Html.DisplayFor(m => m.Stadium)</dd>
+        <dt>@Html.DisplayNameFor(m => m.Capacity):</dt>
+        <dd>@Html.DisplayFor(m => m.Capacity)</dd>
+        <dt>@Html.DisplayNameFor(m => m.NotablePlayers):</dt>
+        <dd>@Html.DisplayFor(m => m.NotablePlayers)</dd>
+        <dt>@Html.DisplayNameFor(m => m.Rivalries):</dt>
+        <dd>@Html.DisplayFor(m => m.Rivalries)</dd>
+        <dt>@Html.DisplayNameFor(m => m.ClubHomepage):</dt>
+        <dd><a href="https://@Html.DisplayFor(m => m.ClubHomepage)">@Html.DisplayFor(m => m.ClubHomepage)</a></dd>
+    </dl>
+
+
+    <dl class="dl-horizontal col-lg-8 mediaR">
+        <dt>@Html.DisplayNameFor(m => m.Logo):</dt>
+        <dd><img src="@Html.DisplayFor(m => m.Logo)" height="100" /></dd>
+        <dt>@Html.DisplayNameFor(m => m.Video):</dt>
+        <dd><iframe width="560" height="315" src="@Html.DisplayFor(m => m.Video)" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe></dd>
+    </dl>
+    <div class="clearfix"></div>
+
+    <div class="retNav">
+        <button class="btn btn-outline-primary">@Html.ActionLink("Edit Club", "Edit", new { id = Model.id })</button>
+        <p>|</p>
+        <button class="btn btn-outline-primary">  @Html.ActionLink("Back to Clubs", "Index") </button>
+    </div>
+
+</section>

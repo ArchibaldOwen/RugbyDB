@@ -1,0 +1,61 @@
+﻿@model IEnumerable<clubDB.Models.club>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<section id="homePage">
+
+    <div class="heading">
+        Professional Rugby Team Database
+
+    </div>
+    <hr />
+
+    <div id="topNav">
+
+        @using (Html.BeginForm()) 
+        {
+            <p>
+                Name: @Html.TextBox("SearchString")
+                
+                &nbsp;&nbsp;  Country: @Html.DropDownList("clubCountry", "All") &nbsp;
+               
+                <input class="btn btn-outline-primary" type="submit" value="Filter" />
+                <button class="btn btn-outline-primary"> @Html.ActionLink("Add a new club", "Create")</button>
+            </p>
+        }
+
+    </div>
+    <hr />
+    <table class="table frontPage">
+       
+        <tr id="tableHead">
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Established)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Country)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CurrentCoach)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Logo)
+            </th>
+            <th>Are you a fan?</th>
+            <th>Fans</th>
+            <th>Actions</th>
+        </tr>
+        @foreach (var item in Model)
+            {
+
+            @Html.Action("_TableRow", new { id = item.id })
+         
+        }
+
+    </table>
+</section>
